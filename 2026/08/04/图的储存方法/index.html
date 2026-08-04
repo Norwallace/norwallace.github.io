@@ -94,7 +94,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://norwallace.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2026-08-04T05:33:45.000Z">
-<meta property="article:modified_time" content="2026-08-04T09:58:57.833Z">
+<meta property="article:modified_time" content="2026-08-04T11:02:15.171Z">
 <meta property="article:author" content="Guo Yuxuan">
 <meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
@@ -620,8 +620,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-08-04 17:58:57</span>
-            <span class="mobile">2026-08-04 17:58:57</span>
+            <span class="desktop">2026-08-04 19:02:15</span>
+            <span class="mobile">2026-08-04 19:02:15</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -685,7 +685,7 @@
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">for(auto &amp;e : g[u])  // 第一种写法，我们要把e作为一个pair&lt;&gt;看待，然后分别用.first和.second访问。</span><br><span class="line">e.first... </span><br><span class="line">e.second...</span><br><span class="line"></span><br><span class="line">for(auto &amp;[v,w] : g[u]) // 这个写法在CCF要求使用cpp14的环境下可能没法使用，但是万一以后允许用cpp17了呢</span><br></pre></td></tr></table></figure></div>
 <h2 id="三、链式前向星"><a href="#三、链式前向星" class="headerlink" title="三、链式前向星"></a>三、链式前向星</h2><p>我们在这里可以使用结构体数组，也可以使用多个一维数组。储存的思路和邻接表很像，但是不使用动态数组，而是改用链表。这个写法在STL大量使用的当下已经有些过时了，但是在部分特殊情况比邻接表更为便捷。<br>代码实现如下：</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">cpp</span><br><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">    int to;</span><br><span class="line">    int w;</span><br><span class="line">    int next;</span><br><span class="line">&#125;g[M]; // M的数值其实不好把控，开大了MLE，开小了RE</span><br><span class="line"></span><br><span class="line">int head[N]; // 储存着每一个点上“第一条”连接着的边的编号。这里的“第一条”指遍历从这条开始遍历</span><br><span class="line">int id；</span><br><span class="line"></span><br><span class="line">void add(int u,int v,int wt)</span><br><span class="line">&#123;</span><br><span class="line">    g[id].to = v;</span><br><span class="line">    g[id].w = wt;</span><br><span class="line">    g[id].next = head[u]; // 给该点上的边进行排序，方便遍历</span><br><span class="line">    head[u] = id;</span><br><span class="line">    id++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-<p>这种方法储存图的话容易MLE。、<br>遍历方法如下：</p>
+<p>这种方法储存图的话容易MLE。<br>遍历方法如下：</p>
 <div class="code-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cpp</span><br><span class="line">for(int i=head[u];i;i=g[u].next)</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <p>一些老师可能会要求把head数组全部赋值为-1,让id从0开始。那就把for循环的判断条件改为i!&#x3D;-1即可。</p>
 <h2 id="四、三种方法对比表"><a href="#四、三种方法对比表" class="headerlink" title="四、三种方法对比表"></a>四、三种方法对比表</h2><table>
@@ -730,7 +730,7 @@
         
             <li>
                 <strong>更新于
-                    :</strong> 2026-08-04 17:58:57
+                    :</strong> 2026-08-04 19:02:15
             </li>
         
         <li>
