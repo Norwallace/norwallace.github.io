@@ -696,7 +696,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -736,7 +736,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -761,14 +761,158 @@
                 
                 <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
                     <h3 class="home-article-title">
-                        <a href="/2026/08/03/%E4%B8%80%E4%BA%9B%E6%B1%82%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%9A%84%E7%AE%97%E6%B3%95/">
-                            一些求单源最短路径的算法
+                        <a href="/2026/08/04/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">
+                            拓扑排序
                         </a>
                     </h3>
 
                     <div class="home-article-content markdown-body">
                         
-                            <p>讲解常用的两个单源最短路径算法——Djikstra和SPFA</p>
+                            
+                            一、什么是拓扑排序拓扑排序是指对DAG（有向无环图）的所有节点进行排序。排序以后，对于每一条边，起点都在终点前面。如果图中有环，则不存在拓扑序DAG的拓扑序不一定唯一\
+二、拓扑排序常用算法————Kahn算法1.核心思想每次选择一个入度为0的节点进行输出。\
+
+计算每一个点的入度
+让入度为0的点入队
+输出点，并将该点所有出边终点的入度减1。如果减为0,则该点入队。
+重复上述过程
+
+2.代码...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Aug 04 2026 18:05:56 GMT+0800">
+                
+                    2026-08-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/notes/">notes</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2026/08/04/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">阅读全文<span class="seo-reader-text">拓扑排序</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2026/08/04/%E5%9B%BE%E7%9A%84%E5%82%A8%E5%AD%98%E6%96%B9%E6%B3%95/">
+                            图的储存方法
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            零、在选择储存方式之前应该考虑的一些事情储存图至少需要储存节点、边、权值三个要素。而图的规模有大有小，稀疏程度也因题而异，因此我们需要根据稀疏程度和处理方式选择合适的储存方式。比如，如果我们需要快速地判断两个点之间有没有边，我们就可以选择邻接矩阵；如果我们需要快速地找到和一个点相连的所有边，那我们就可以选用邻接表。如果我们遇到了较为稠密的图，我们可以选择邻接矩阵；如果我们遇到了较为稀疏的图，...
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Aug 04 2026 13:33:45 GMT+0800">
+                
+                    2026-08-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/notes/">notes</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2026/08/04/%E5%9B%BE%E7%9A%84%E5%82%A8%E5%AD%98%E6%96%B9%E6%B3%95/">阅读全文<span class="seo-reader-text">图的储存方法</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2026/08/03/%E4%B8%80%E4%BA%9B%E6%B1%82%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%9A%84%E7%AE%97%E6%B3%95/">
+                            最短路径问题
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>讲解常用的最短路径算法</p>
 
                         
                     </div>
@@ -814,7 +958,7 @@
         
     </div>
 
-    <a href="/2026/08/03/%E4%B8%80%E4%BA%9B%E6%B1%82%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%9A%84%E7%AE%97%E6%B3%95/">阅读全文<span class="seo-reader-text">一些求单源最短路径的算法</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+    <a href="/2026/08/03/%E4%B8%80%E4%BA%9B%E6%B1%82%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%9A%84%E7%AE%97%E6%B3%95/">阅读全文<span class="seo-reader-text">最短路径问题</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
                 </div>
@@ -891,7 +1035,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 2 篇文章
+                        共撰写了 4 篇文章
                     </span>
                     
                 </p>

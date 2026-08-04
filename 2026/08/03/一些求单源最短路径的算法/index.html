@@ -87,14 +87,14 @@
         
         <meta name="description" content="Norwallace&#39;s blog, a simple blog.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一些求单源最短路径的算法">
+<meta property="og:title" content="最短路径问题">
 <meta property="og:url" content="https://norwallace.github.io/2026/08/03/%E4%B8%80%E4%BA%9B%E6%B1%82%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E7%9A%84%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Norwallace&#39;s blog">
 <meta property="og:description" content="Norwallace&#39;s blog, a simple blog.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://norwallace.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2026-08-03T15:30:50.000Z">
-<meta property="article:modified_time" content="2026-08-03T15:50:25.341Z">
+<meta property="article:modified_time" content="2026-08-04T10:55:01.671Z">
 <meta property="article:author" content="Guo Yuxuan">
 <meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
@@ -110,7 +110,7 @@
     
     <title>
         
-            一些求单源最短路径的算法 | Norwallace&#39;s blog
+            最短路径问题 | Norwallace&#39;s blog
         
     </title>
 
@@ -569,7 +569,7 @@
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -592,7 +592,7 @@
 		<div class="article-title relative w-full">
 			
 			<div class="w-full flex items-center pt-6 justify-start">
-				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">一些求单源最短路径的算法</h1>
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">最短路径问题</h1>
 			</div>
 			
 		</div>
@@ -620,8 +620,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-08-03 23:50:25</span>
-            <span class="mobile">2026-08-03 23:50:25</span>
+            <span class="desktop">2026-08-04 18:55:01</span>
+            <span class="mobile">2026-08-04 18:55:01</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -682,8 +682,7 @@
                      data-src="https://cdn.luogu.com.cn/upload/image_hosting/wr341f7y.png"
                      
                 ></p>
-<p>用生活化的方式来解释，就是从1处走到2处需要3个单位长度，从2处走到3处需要2个单位长度。那么，如果我们需要1-&gt;2-&gt;3这条路线来实现从1处走到3处，所要走的路程就是3+2&#x3D;5个单位长度。而直接从1处走到3处需要6个单位长度，因此更好的方案是1-&gt;2-&gt;3这条路线，所需的路程也不再是6个单位长度而是5个。这时候我们就可以记录：从1处走到3处需要5个单位长度。</p>
-<p>实际写出来就是</p>
+<p>用生活化的方式来解释，就是从1处走到2处需要3个单位长度，从2处走到3处需要2个单位长度。那么，如果我们需要1-&gt;2-&gt;3这条路线来实现从1处走到3处，所要走的路程就是3+2&#x3D;5个单位长度。而直接从1处走到3处需要6个单位长度，因此更好的方案是1-&gt;2-&gt;3这条路线，所需的路程也不再是6个单位长度而是5个。这时候我们就可以记录：从1处走到3处需要5个单位长度。<br>实际写出来就是</p>
 <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dis[<span class="number">1</span>][<span class="number">2</span>]=<span class="number">3</span>;</span><br><span class="line">dis[<span class="number">2</span>][<span class="number">3</span>]=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">if</span>(dis[<span class="number">1</span>][<span class="number">2</span>]+dis[<span class="number">2</span>][<span class="number">3</span>] &lt; dis[<span class="number">1</span>][<span class="number">3</span>])</span><br><span class="line">    dis[<span class="number">1</span>][<span class="number">3</span>]=dis[<span class="number">1</span>][<span class="number">2</span>]+dis[<span class="number">2</span>][<span class="number">3</span>];</span><br></pre></td></tr></table></figure></div>
 <p>在下面的所有算法中松弛的含义和实现方式是相同的，只是当题目是单源（即起点已经给出）的时候只需要写一维数组即可。</p>
 <h2 id="一、Djikstra算法"><a href="#一、Djikstra算法" class="headerlink" title="一、Djikstra算法"></a>一、Djikstra算法</h2><h3 id="1-基本思路"><a href="#1-基本思路" class="headerlink" title="1.基本思路"></a>1.基本思路</h3><p>从起点开始，判断哪一条边最短，然后按照最短的顺序依次来进行处理，每一步处理完以后会对这个点进行松弛操作。最后我们把目标点的dis[ ]值输出即可。</p>
@@ -693,40 +692,24 @@
                      data-src="https://cdn.luogu.com.cn/upload/image_hosting/pvxeledw.png"
                      
                 ></p>
-<p>因为起始点到起始点距离为0,所以使dis[1]&#x3D;0</p>
-<p>第一轮：</p>
+<p>因为起始点到起始点距离为0,所以使dis[1]&#x3D;0<br>第一轮：\</p>
 <ol>
 <li>从1开始寻找未被访问的点，选中1号。</li>
 <li>分别对子节点进行松弛。</li>
-<li>得到结果 dis[2]&#x3D;5,dis[3]&#x3D;2</li>
-</ol>
-<p>第二轮：</p>
-<ol>
+<li>得到结果 dis[2]&#x3D;5,dis[3]&#x3D;2<br>第二轮：\</li>
 <li>从1开始寻找未被访问的最近点，因为1号被访问过，2比3远，选中3。</li>
 <li>分别对子节点进行松弛。</li>
-<li>得到结果 dis[2]&#x3D;4;</li>
-</ol>
-<p>第三轮：</p>
-<ol>
+<li>得到结果 dis[2]&#x3D;4;<br>第三轮：\</li>
 <li>从1开始寻找未被访问的最近点，选中2。</li>
 <li>分别对子节点进行松弛。</li>
-<li>得到结果 dis[4]&#x3D;8;</li>
-</ol>
-<p>第四轮：</p>
-<ol>
+<li>得到结果 dis[4]&#x3D;8;<br>第四轮：\</li>
 <li>从1开始寻找未被访问的最近点，选中4。</li>
-<li>分别对子节点进行松弛，但是4无子节点，无法松弛。</li>
+<li>分别对子节点进行松弛，但是4无子节点，无法松弛。<br>第五轮：<br>从1开始寻找未被访问的最近点，但是所有节点都被访问过，终止。<br>得到结果：1到4最短路径长度为8。\</li>
 </ol>
-<p>第五轮：</p>
-<p>从1开始寻找未被访问的最近点，但是所有节点都被访问过，终止</p>
-<p>得到结果：1到4最短路径长度为8</p>
-<h3 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="3.代码实现"></a>3.代码实现</h3><p>这里以这道例题为例。</p>
-<p>未优化的代码如下：</p>
+<h3 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="3.代码实现"></a>3.代码实现</h3><p>这里以这道例题为例。<br>未优化的代码如下：</p>
 <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//我这里选择用链式前向星完成对图的储存</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span>&#123;</span><br><span class="line">	<span class="type">int</span> to;</span><br><span class="line">	<span class="type">int</span> next;</span><br><span class="line">	<span class="type">int</span> l;</span><br><span class="line">&#125;line[<span class="number">500050</span>];</span><br><span class="line"><span class="type">int</span> head[<span class="number">10040</span>]; <span class="comment">//链式前向星 </span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dis[<span class="number">10040</span>]; <span class="comment">//原点到目标点直线距离 </span></span><br><span class="line"><span class="type">bool</span> vis[<span class="number">10040</span>]=&#123;<span class="number">0</span>&#125;; <span class="comment">//是否访问 </span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m,s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dji</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		dis[i]=<span class="built_in">pow</span>(<span class="number">2</span>,<span class="number">31</span>)<span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	dis[s]=<span class="number">0</span>; <span class="comment">//原点位置到原点路径为0 </span></span><br><span class="line">	<span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> x=<span class="number">0</span>;</span><br><span class="line">		dis[x]=<span class="built_in">pow</span>(<span class="number">2</span>,<span class="number">31</span>)<span class="number">-1</span>; <span class="comment">//比较用的标杆，每一次都必须设立 </span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(!vis[i]&amp;&amp;dis[x]&gt;dis[i]) <span class="comment">//查找点（！！！这里是一个可以优化的地方，绝大部分优化从这里入手） </span></span><br><span class="line">				x=i;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(x==<span class="number">0</span>) <span class="comment">//如果无可用点就退出循环（必须存在，因为正常情况下的终止条件就是无可用点） </span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		vis[x]=<span class="literal">true</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=head[x];i!=<span class="number">0</span>;i=line[i].next) <span class="comment">//遍历子节点 </span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="type">int</span> t=dis[x]+line[i].l;</span><br><span class="line">			<span class="keyword">if</span>(t&lt;dis[line[i].to])&#123;</span><br><span class="line">				dis[line[i].to]=t;<span class="comment">//松弛</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> u,v,w;</span><br><span class="line">		cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;</span><br><span class="line">		line[i].to=v;</span><br><span class="line">		line[i].l=w;</span><br><span class="line">		line[i].next=head[u];</span><br><span class="line">		head[u]=i; <span class="comment">//输入</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">dji</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; dis[i]&lt;&lt; <span class="string">&quot; &quot;</span>; <span class="comment">//输出起点到其他节点的最短距离</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
 <p>优化后的算法写法如下：</p>
 <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//我这里选择用链式前向星完成对图的储存</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span>&#123;</span><br><span class="line">	<span class="type">int</span> to;</span><br><span class="line">	<span class="type">int</span> next;</span><br><span class="line">	<span class="type">int</span> l;</span><br><span class="line">&#125;line[<span class="number">500050</span>];</span><br><span class="line"><span class="type">int</span> head[<span class="number">10040</span>]; <span class="comment">//链式前向星 </span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dis[<span class="number">10040</span>]; <span class="comment">//原点到目标点直线距离 </span></span><br><span class="line"><span class="type">bool</span> vis[<span class="number">10040</span>]=&#123;<span class="number">0</span>&#125;; <span class="comment">//是否访问 </span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m,s;</span><br><span class="line"></span><br><span class="line">priority_queue&lt; pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;, vector&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt;, greater&lt;pair&lt;<span class="type">int</span>, <span class="type">int</span>&gt;&gt; &gt; q;</span><br><span class="line"><span class="comment">/*这里我们使用优先队列来进行优化。</span></span><br><span class="line"><span class="comment">尖括号中第一部分是确定存储的类型，我们选用pair来同时储存距离和所处节点编号。</span></span><br><span class="line"><span class="comment">第二部分是为这个队列选择底层容器，因为我们想要它动态地变大变小，所以我们选择vector&lt;&gt;，vector&lt;&gt;的尖括号内部为存储的数据类型。</span></span><br><span class="line"><span class="comment">！（实际上，queue的默认容器的确是vector，但是我们写第二部分是为了要写第三部分，否则无法直接写第三部分。也就是常说的为了一碟醋包了盘饺子）！</span></span><br><span class="line"><span class="comment">第三部分是为这个队列选择排序方式。当我们选择greater时，会将比较值小的那一个放在前面。而我们这里的写法默认会将pair中的第一个int作为比较对象。*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dji</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x3f</span>, <span class="built_in">sizeof</span>(dis)); <span class="comment">//这种写法避免了pow()返回浮点数的问题。</span></span><br><span class="line">	dis[s]=<span class="number">0</span>; <span class="comment">//原点位置到原点路径为0 </span></span><br><span class="line">    q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(<span class="number">0</span>,s)); <span class="comment">//将起点加入队列</span></span><br><span class="line">	<span class="keyword">while</span>(!q.<span class="built_in">empty</span>())</span><br><span class="line">	&#123;</span><br><span class="line">        <span class="type">int</span> D=q.<span class="built_in">top</span>().first;</span><br><span class="line">        <span class="type">int</span> N=q.<span class="built_in">top</span>().second; <span class="comment">//优先队列没有front()，喜欢写front()的小朋友注意了！</span></span><br><span class="line">        q.<span class="built_in">pop</span>(); <span class="comment">//这里和大部分使用队列的算法相同</span></span><br><span class="line">        <span class="keyword">if</span>(vis[N])</span><br><span class="line">           <span class="keyword">continue</span>; <span class="comment">//同一个节点可能多次入列，但是djikstra对每一个节点只处理一次，因此检测该节点是否被处理过。</span></span><br><span class="line"><span class="comment">//vis[]数组的作用在不同的算法中有着显著差异，记得区分。</span></span><br><span class="line">        vis[N]=<span class="literal">true</span>; <span class="comment">//标记访问过</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=head[N];i!=<span class="number">0</span>;i=line[i].next)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="type">int</span> v=line[i].to;</span><br><span class="line">            <span class="type">int</span> w=line[i].l;</span><br><span class="line">            <span class="keyword">if</span>(dis[v] &gt; dis[N]+w)</span><br><span class="line">            &#123;</span><br><span class="line">                dis[v]=dis[N]+w;</span><br><span class="line">                q.<span class="built_in">push</span>(<span class="built_in">make_pair</span>(dis[v],v)); <span class="comment">//将节点加入队列。虽然会把同一节点多次入列，但是我们在前面的处理中避免了出错问题。</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> u,v,w;</span><br><span class="line">		cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;</span><br><span class="line">		line[i].to=v;</span><br><span class="line">		line[i].l=w;</span><br><span class="line">		line[i].next=head[u];</span><br><span class="line">		head[u]=i; <span class="comment">//输入</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">dji</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; dis[i]&lt;&lt; <span class="string">&quot; &quot;</span>; <span class="comment">//输出起点到其他节点的最短距离</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
 <h3 id="4-适用范围"><a href="#4-适用范围" class="headerlink" title="4.适用范围"></a>4.适用范围</h3><p>我们一般在遇到图为正权（或非负权）时使用该算法。未优化的算法时间复杂度为O(n^2)，优化后的时间复杂度为O((n+m)logn)。但是在遇到负权时会出现错误。（举例：1-&gt;2 -1；1-&gt;3 1；3-&gt;2 -3；2-&gt;4 1），仅遇到简单负权图的时候可以侥幸通过。</p>
 <h2 id="二、SPFA算法"><a href="#二、SPFA算法" class="headerlink" title="二、SPFA算法"></a>二、SPFA算法</h2><h3 id="1-基本思路-1"><a href="#1-基本思路-1" class="headerlink" title="1.基本思路"></a>1.基本思路</h3><p>在图中，我们从起点开始，直接把所有子节点加入队列之中，不按照边权重从小到大排序，依次处理。这样可以解决迪杰斯特拉算法遇到的“无法处理含负权图”问题</p>
 <h3 id="2-例子讲解-1"><a href="#2-例子讲解-1" class="headerlink" title="2.例子讲解"></a>2.例子讲解</h3><p>假设我们有这样一张图，设定起点为1,终点为4。<br><img  
@@ -735,58 +718,41 @@
                      data-src="https://cdn.luogu.com.cn/upload/image_hosting/yqeupvv6.png"
                      
                 ></p>
-<p>同样地，起始点到起始点的距离为0,所以使dis[1]&#x3D;0</p>
-<p>第一步：</p>
+<p>同样地，起始点到起始点的距离为0,所以使dis[1]&#x3D;0<br>第一步：\</p>
 <ol>
 <li>从起始节点开始，松弛子节点。</li>
 <li>得到dis[2]&#x3D;-2,dis[3]&#x3D;2</li>
-<li>将松弛过的子节点2、3加入队列，弹出队列头元素1。</li>
-</ol>
-<p>第二步：</p>
-<ol>
+<li>将松弛过的子节点2、3加入队列，弹出队列头元素1。<br>第二步：\</li>
 <li>从2号节点开始，松弛子节点。</li>
 <li>得到dis[4]&#x3D;-2</li>
-<li>将松弛过的子节点4加入队列，弹出队列头元素2。</li>
-</ol>
-<p>第三步：</p>
-<ol>
+<li>将松弛过的子节点4加入队列，弹出队列头元素2。<br>第三步：\</li>
 <li>从3号节点开始，松弛子节点。</li>
 <li>得到dis[2]&#x3D;-3</li>
-<li>将松弛过的子节点2加入队列，弹出队列头元素3。</li>
-</ol>
-<p><strong>注意！从这里我们就已经可以看出来Djikstra和SPFA的区别了：SPFA允许同一个节点多次处理</strong></p>
-<p>第四步：</p>
-<p>从4号节点开始，松弛子节点。但4号节点无子节点，因此这一步只能弹出队列头元素4。</p>
-<p>第五步：</p>
-<ol>
+<li>将松弛过的子节点2加入队列，弹出队列头元素3。<br><strong>注意！从这里我们就已经可以看出来Djikstra和SPFA的区别了：SPFA允许同一个节点多次处理</strong><br>第四步：<br>从4号节点开始，松弛子节点。但4号节点无子节点，因此这一步只能弹出队列头元素4。<br>第五步：\</li>
 <li>从2号节点开始，松弛子节点。</li>
 <li>得到dis[4]&#x3D;-3</li>
-<li>将松弛过的子节点4加入队列，弹出队列头元素2。</li>
+<li>将松弛过的子节点4加入队列，弹出队列头元素2。<br>第六步：<br>从4号节点开始，松弛子节点。但4号节点无子节点，因此这一步只能弹出队列头元素4。<br>此时队列为空，处理结束。得到结果：1到4最短路径长度为-3</li>
 </ol>
-<p>第六步：</p>
-<p>从4号节点开始，松弛子节点。但4号节点无子节点，因此这一步只能弹出队列头元素4。</p>
-<p>此时队列为空，处理结束。得到结果：1到4最短路径长度为-3</p>
 <h3 id="3-代码实现-1"><a href="#3-代码实现-1" class="headerlink" title="3.代码实现"></a>3.代码实现</h3><p>这里以这道例题为例 ，代码如下：</p>
 <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//依旧选用链式前向星储存图</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">edge</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> to;</span><br><span class="line">	<span class="type">int</span> next;</span><br><span class="line">	<span class="type">int</span> l;</span><br><span class="line">&#125;line[<span class="number">500020</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> head[<span class="number">10030</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> dis[<span class="number">10030</span>];</span><br><span class="line"><span class="type">int</span> vis[<span class="number">10030</span>];<span class="comment">//这个的用途不是“是否被访问过”，而是“是否在队列中” </span></span><br><span class="line"></span><br><span class="line">queue&lt;<span class="type">int</span>&gt; list;<span class="comment">//SPFA类似BFS，需要使用queue </span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> n,m,s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">spfa</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="built_in">memset</span>(dis,<span class="number">0x3f</span>,<span class="built_in">sizeof</span>(dis))</span><br><span class="line">	dis[s]=<span class="number">0</span>;<span class="comment">//起点初始化 </span></span><br><span class="line">	list.<span class="built_in">push</span>(s);</span><br><span class="line">	vis[s]=<span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">while</span>(!list.<span class="built_in">empty</span>())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> t=list.<span class="built_in">front</span>();</span><br><span class="line">		list.<span class="built_in">pop</span>();</span><br><span class="line">		vis[t]=<span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=head[t];i!=<span class="number">0</span>;i=line[i].next)</span><br><span class="line">		&#123;	</span><br><span class="line">			<span class="keyword">if</span>(dis[t]+line[i].l&lt;dis[line[i].to])&#123;</span><br><span class="line">				dis[line[i].to]=dis[t]+line[i].l;</span><br><span class="line">				<span class="keyword">if</span>(!vis[line[i].to])</span><br><span class="line">				&#123;</span><br><span class="line">					list.<span class="built_in">push</span>(line[i].to);</span><br><span class="line">					vis[line[i].to]=<span class="literal">true</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m &gt;&gt; s;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=m;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> u,v,w;</span><br><span class="line">		cin &gt;&gt; u &gt;&gt; v &gt;&gt; w;</span><br><span class="line">		line[i].to=v;</span><br><span class="line">		line[i].l=w;</span><br><span class="line">		line[i].next=head[u];</span><br><span class="line">		head[u]=i; <span class="comment">//输入</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">spfa</span>();</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;=n;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		cout &lt;&lt; dis[i]&lt;&lt; <span class="string">&quot; &quot;</span>; <span class="comment">//输出起点到其他节点的最短路径</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-
 <p>如果遇到可能出现环的图，我们就加入一个cnt[]数组来记录源点到达各个点的边数。若有边数大于等于总节点数就证明有被重复的边，即存在环。</p>
 <h3 id="4-适用范围-1"><a href="#4-适用范围-1" class="headerlink" title="4.适用范围"></a>4.适用范围</h3><p>在遇到正权（或非负权）图的时候，时间复杂度为O(mn)，不如Djikstra，所以不在这种情况下使用SPFA。但是遇到负权（或判断负环）的时候只能用SPFA。</p>
 <h1 id=""><a href="#" class="headerlink" title=""></a></h1><p><strong>对于单源最短路径问题的两种经典算法介绍就到这里。本人第一次写文章，文笔生疏见谅，如有错误之处敬请指正。</strong></p>
-
+<h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2>
 		</div>
 
 		
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> 一些求单源最短路径的算法</li>
+        <li><strong>标题:</strong> 最短路径问题</li>
         <li><strong>作者:</strong> Norwallace</li>
         <li><strong>创建于
                 :</strong> 2026-08-03 23:30:50</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2026-08-03 23:50:25
+                    :</strong> 2026-08-04 18:55:01
             </li>
         
         <li>
@@ -823,6 +789,18 @@
 		
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
 			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2026/08/04/%E5%9B%BE%E7%9A%84%E5%82%A8%E5%AD%98%E6%96%B9%E6%B3%95/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">图的储存方法</span>
+						<span class="post-nav-item">上一篇</span>
+					</span>
+				</a>
+			</div>
+			
 			
 			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
 				<a class="next" rel="next" href="/2026/07/30/hello%20world/">
@@ -848,8 +826,8 @@
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">目录</div>
-		<div class="page-title">一些求单源最短路径的算法</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E3%80%81%E5%95%A5%E5%8F%AB%E6%9D%BE%E5%BC%9B%EF%BC%9F"><span class="nav-text">零、啥叫松弛？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81Djikstra%E7%AE%97%E6%B3%95"><span class="nav-text">一、Djikstra算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="nav-text">1.基本思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BE%8B%E5%AD%90%E8%AE%B2%E8%A7%A3"><span class="nav-text">2.例子讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">3.代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%80%82%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="nav-text">4.适用范围</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81SPFA%E7%AE%97%E6%B3%95"><span class="nav-text">二、SPFA算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF-1"><span class="nav-text">1.基本思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BE%8B%E5%AD%90%E8%AE%B2%E8%A7%A3-1"><span class="nav-text">2.例子讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="nav-text">3.代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%80%82%E7%94%A8%E8%8C%83%E5%9B%B4-1"><span class="nav-text">4.适用范围</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"></span></a></li></ol>
+		<div class="page-title">最短路径问题</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E3%80%81%E5%95%A5%E5%8F%AB%E6%9D%BE%E5%BC%9B%EF%BC%9F"><span class="nav-text">零、啥叫松弛？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81Djikstra%E7%AE%97%E6%B3%95"><span class="nav-text">一、Djikstra算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="nav-text">1.基本思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BE%8B%E5%AD%90%E8%AE%B2%E8%A7%A3"><span class="nav-text">2.例子讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">3.代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%80%82%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="nav-text">4.适用范围</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81SPFA%E7%AE%97%E6%B3%95"><span class="nav-text">二、SPFA算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF-1"><span class="nav-text">1.基本思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BE%8B%E5%AD%90%E8%AE%B2%E8%A7%A3-1"><span class="nav-text">2.例子讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0-1"><span class="nav-text">3.代码实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E9%80%82%E7%94%A8%E8%8C%83%E5%9B%B4-1"><span class="nav-text">4.适用范围</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#-1"><span class="nav-text"></span></a></li></ol></li></ol>
 
 	</div>
 </div>
@@ -877,7 +855,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 2 篇文章
+                        共撰写了 4 篇文章
                     </span>
                     
                 </p>
