@@ -78,7 +78,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://norwallace.github.io/2026/07/30/hello world/"/>
+    <link rel="canonical" href="https://norwallace.github.io/2026/08/06/树的重心/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -87,15 +87,16 @@
         
         <meta name="description" content="Norwallace&#39;s blog, a simple blog.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello world">
-<meta property="og:url" content="https://norwallace.github.io/2026/07/30/hello%20world/index.html">
+<meta property="og:title" content="树的重心">
+<meta property="og:url" content="https://norwallace.github.io/2026/08/06/%E6%A0%91%E7%9A%84%E9%87%8D%E5%BF%83/index.html">
 <meta property="og:site_name" content="Norwallace&#39;s blog">
 <meta property="og:description" content="Norwallace&#39;s blog, a simple blog.">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://norwallace.github.io/images/redefine-og.webp">
-<meta property="article:published_time" content="2026-07-30T04:44:19.000Z">
-<meta property="article:modified_time" content="2026-08-03T03:51:43.800Z">
+<meta property="article:published_time" content="2026-08-06T04:24:05.000Z">
+<meta property="article:modified_time" content="2026-08-06T08:39:02.541Z">
 <meta property="article:author" content="Guo Yuxuan">
+<meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://norwallace.github.io/images/redefine-og.webp">
     
@@ -109,7 +110,7 @@
     
     <title>
         
-            hello world | Norwallace&#39;s blog
+            树的重心 | Norwallace&#39;s blog
         
     </title>
 
@@ -703,7 +704,7 @@ mjx-container[display="true"] + br {
 		<div class="article-title relative w-full">
 			
 			<div class="w-full flex items-center pt-6 justify-start">
-				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">hello world</h1>
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">树的重心</h1>
 			</div>
 			
 		</div>
@@ -724,20 +725,47 @@ mjx-container[display="true"] + br {
 					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="desktop">2026-07-30 12:44:19</span>
-        <span class="mobile">2026-07-30 12:44:19</span>
+        <span class="desktop">2026-08-06 12:24:05</span>
+        <span class="mobile">2026-08-06 12:24:05</span>
         <span class="hover-info">创建</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-08-03 11:51:43</span>
-            <span class="mobile">2026-08-03 11:51:43</span>
+            <span class="desktop">2026-08-06 16:39:02</span>
+            <span class="mobile">2026-08-06 16:39:02</span>
             <span class="hover-info">更新</span>
         </span>
     
 
     
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/notes/">notes</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
 
     
@@ -759,7 +787,18 @@ mjx-container[display="true"] + br {
 
 
 		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-			<p>纪念网页搭建成功</p>
+			<h2 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h2><h3 id="1-定义"><a href="#1-定义" class="headerlink" title="1.定义"></a>1.定义</h3><p>如果一个点为这棵树的重心，那么删除该点后，剩下的每个连通块的大小都为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.781ex;" xmlns="http://www.w3.org/2000/svg" width="4.344ex" height="2.379ex" role="img" focusable="false" viewBox="0 -706.5 1920 1051.5"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="\leq \frac{n}{2}"><g data-mml-node="mo" data-latex="\leq"><path data-c="2264" d="M668 38C686 29 703 44 703 60C703 69 698 76 689 80L155 333L689 586C698 590 703 597 703 606C703 623 695 631 679 631C675 631 671 630 668 629L94 357C84 352 79 344 79 333C79 322 84 315 94 310M678-72L100-72C84-72 76-80 76-95C76-111 84-119 100-119L678-119C694-119 702-111 702-95C702-83 691-72 678-72Z"></path></g><g data-mml-node="mfrac" data-latex="\frac{n}{2}" transform="translate(1055.8,0)"><g data-mml-node="mi" transform="translate(220,394) scale(0.707)" data-latex="n"><path data-c="1D45B" d="M537 137C514 58 481 18 440 18C427 18 420 28 420 47C420 61 426 84 438 115C478 224 498 296 498 333C498 403 451 442 381 442C322 442 271 416 230 363C222 407 187 442 136 442C80 442 58 390 44 345C34 313 29 294 29 287C29 278 34 273 45 273C50 273 53 274 56 276C61 285 64 292 65 299C83 375 106 413 133 413C151 413 160 399 160 371C160 358 155 331 144 290L87 63C84 50 78 24 78 19C78-1 89-11 111-11C130-11 144-1 151 19C153 24 159 49 170 92L191 181L221 295C232 318 249 341 270 365C299 397 335 413 378 413C411 413 427 391 427 348C427 310 406 234 363 120C356 102 353 87 353 74C353 25 390-11 438-11C482-11 517 14 542 64C561 104 571 131 571 144C571 153 566 158 555 158C552 158 537 149 537 137Z"></path></g><g data-mml-node="mn" transform="translate(255.4,-345) scale(0.707)" data-latex="2"><path data-c="32" d="M237 666C186 666 143 648 106 612C69 576 50 534 50 483C50 449 75 424 106 424C136 424 161 450 161 480C161 513 137 536 105 536C102 536 100 536 98 535C117 584 161 627 224 627C306 627 352 556 352 470C352 403 318 331 250 255L62 43C49 28 50 29 50 0L421 0L450 180L417 180C409 129 402 100 396 91C391 86 361 84 306 84L139 84L236 179C304 243 390 312 419 365C439 400 449 435 449 470C449 588 357 666 237 666Z"></path></g><rect width="624.3" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container> <br><strong>注意</strong>：一棵树可能有一个或两个重心。</p>
+<h4 id="（1）一个重心情况："><a href="#（1）一个重心情况：" class="headerlink" title="（1）一个重心情况："></a>（1）一个重心情况：</h4><p>如果树的重心仅有一个，情况如图</p>
+<p>此时若删除重心点，则剩下的每个连通块的大小都为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.781ex;" xmlns="http://www.w3.org/2000/svg" width="4ex" height="2.748ex" role="img" focusable="false" viewBox="0 -869.6 1767.9 1214.6"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="\frac{n-1}{2}"><g data-mml-node="mfrac" data-latex="\frac{n-1}{2}"><g data-mml-node="mrow" transform="translate(220,398.7) scale(0.707)" data-latex="n-1"><g data-mml-node="mi" data-latex="n"><path data-c="1D45B" d="M537 137C514 58 481 18 440 18C427 18 420 28 420 47C420 61 426 84 438 115C478 224 498 296 498 333C498 403 451 442 381 442C322 442 271 416 230 363C222 407 187 442 136 442C80 442 58 390 44 345C34 313 29 294 29 287C29 278 34 273 45 273C50 273 53 274 56 276C61 285 64 292 65 299C83 375 106 413 133 413C151 413 160 399 160 371C160 358 155 331 144 290L87 63C84 50 78 24 78 19C78-1 89-11 111-11C130-11 144-1 151 19C153 24 159 49 170 92L191 181L221 295C232 318 249 341 270 365C299 397 335 413 378 413C411 413 427 391 427 348C427 310 406 234 363 120C356 102 353 87 353 74C353 25 390-11 438-11C482-11 517 14 542 64C561 104 571 131 571 144C571 153 566 158 555 158C552 158 537 149 537 137Z"></path></g><g data-mml-node="mo" data-latex="-" transform="translate(600,0)"><path data-c="2212" d="M698 270L80 270C64 270 56 263 56 250C56 237 64 230 80 230L698 230C714 230 722 237 722 250C722 262 710 270 698 270Z"></path></g><g data-mml-node="mn" data-latex="1" transform="translate(1378,0)"><path data-c="31" d="M269 666C228 624 168 603 89 603L89 564C141 564 184 572 217 588L217 82C217 64 213 52 204 47C195 42 170 39 130 39L95 39L95 0C120 2 174 3 257 3C340 3 394 2 419 0L419 39L384 39C343 39 318 42 310 47C302 52 297 64 297 82L297 636C297 660 295 666 269 666Z"></path></g></g><g data-mml-node="mn" transform="translate(707.2,-345) scale(0.707)" data-latex="2"><path data-c="32" d="M237 666C186 666 143 648 106 612C69 576 50 534 50 483C50 449 75 424 106 424C136 424 161 450 161 480C161 513 137 536 105 536C102 536 100 536 98 535C117 584 161 627 224 627C306 627 352 556 352 470C352 403 318 331 250 255L62 43C49 28 50 29 50 0L421 0L450 180L417 180C409 129 402 100 396 91C391 86 361 84 306 84L139 84L236 179C304 243 390 312 419 365C439 400 449 435 449 470C449 588 357 666 237 666Z"></path></g><rect width="1527.9" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></p>
+<h4 id="（2）两个重心情况："><a href="#（2）两个重心情况：" class="headerlink" title="（2）两个重心情况："></a>（2）两个重心情况：</h4><p>如果树的重心有两个，情况如图</p>
+<p>此时若删除两个重心之间的边，则剩下每个连通块的大小都为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.781ex;" xmlns="http://www.w3.org/2000/svg" width="1.955ex" height="2.379ex" role="img" focusable="false" viewBox="0 -706.5 864.3 1051.5"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="\frac{n}{2}"><g data-mml-node="mfrac" data-latex="\frac{n}{2}"><g data-mml-node="mi" transform="translate(220,394) scale(0.707)" data-latex="n"><path data-c="1D45B" d="M537 137C514 58 481 18 440 18C427 18 420 28 420 47C420 61 426 84 438 115C478 224 498 296 498 333C498 403 451 442 381 442C322 442 271 416 230 363C222 407 187 442 136 442C80 442 58 390 44 345C34 313 29 294 29 287C29 278 34 273 45 273C50 273 53 274 56 276C61 285 64 292 65 299C83 375 106 413 133 413C151 413 160 399 160 371C160 358 155 331 144 290L87 63C84 50 78 24 78 19C78-1 89-11 111-11C130-11 144-1 151 19C153 24 159 49 170 92L191 181L221 295C232 318 249 341 270 365C299 397 335 413 378 413C411 413 427 391 427 348C427 310 406 234 363 120C356 102 353 87 353 74C353 25 390-11 438-11C482-11 517 14 542 64C561 104 571 131 571 144C571 153 566 158 555 158C552 158 537 149 537 137Z"></path></g><g data-mml-node="mn" transform="translate(255.4,-345) scale(0.707)" data-latex="2"><path data-c="32" d="M237 666C186 666 143 648 106 612C69 576 50 534 50 483C50 449 75 424 106 424C136 424 161 450 161 480C161 513 137 536 105 536C102 536 100 536 98 535C117 584 161 627 224 627C306 627 352 556 352 470C352 403 318 331 250 255L62 43C49 28 50 29 50 0L421 0L450 180L417 180C409 129 402 100 396 91C391 86 361 84 306 84L139 84L236 179C304 243 390 312 419 365C439 400 449 435 449 470C449 588 357 666 237 666Z"></path></g><rect width="624.3" height="60" x="120" y="220"></rect></g></g></g></svg></mjx-container></p>
+<h3 id="2-性质"><a href="#2-性质" class="headerlink" title="2.性质"></a>2.性质</h3><ol>
+<li>距离和最小：所有点到重心的距离和最小</li>
+<li>添加或删除一个叶子，重心最多移动一条边</li>
+<li>两棵树通过一条边连接，新树的重心在原来两个重心的路径上</li>
+</ol>
+<h2 id="二、重心求法——使用DFS"><a href="#二、重心求法——使用DFS" class="headerlink" title="二、重心求法——使用DFS"></a>二、重心求法——使用DFS</h2><h3 id="1-基本思路"><a href="#1-基本思路" class="headerlink" title="1.基本思路"></a>1.基本思路</h3><h3 id="2-代码实现"><a href="#2-代码实现" class="headerlink" title="2.代码实现"></a>2.代码实现</h3><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;<span class="type">int</span>&gt; g[N];</span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">int</span> sz[N];</span><br><span class="line"><span class="type">int</span> c, mn=<span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> f=<span class="number">-1</span>)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    sz[u]=<span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> mx=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> v : g[u])</span><br><span class="line">        <span class="keyword">if</span>(v != f)</span><br><span class="line">            {</span><br><span class="line">                <span class="built_in">dfs</span>(v,u);</span><br><span class="line">                sz[u]+=sz[v];</span><br><span class="line">                mx=<span class="built_in">max</span>(mx,sz[v]);</span><br><span class="line">            }</span><br><span class="line">    mx=<span class="built_in">max</span>(mx,n-sz[u]);</span><br><span class="line">    <span class="keyword">if</span>(mx &lt; mn)</span><br><span class="line">    {</span><br><span class="line">        mn=mx;</span><br><span class="line">        c=u;</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+<p>该算法的时间复杂度为 <mjx-container class="MathJax" jax="SVG" overflow="overflow"><svg style="vertical-align: -0.561ex;" xmlns="http://www.w3.org/2000/svg" width="4.844ex" height="2.253ex" role="img" focusable="false" viewBox="0 -748 2141 996"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math" data-latex="O(n)"><g data-mml-node="mi" data-latex="O"><path data-c="1D442" d="M702 263C727 320 740 377 740 435C740 513 717 577 670 628C623 679 561 705 484 705C431 705 378 692 325 666C217 613 138 529 87 415C62 359 49 303 49 246C49 167 72 103 119 53C166 3 228-22 306-22C358-22 410-9 463 16C572 69 651 152 702 263M644 474C644 341 584 208 520 129C476 74 400 12 312 12C205 12 149 105 149 218C149 253 156 300 169 357C196 475 264 579 353 633C396 659 438 672 478 672C586 672 644 586 644 474Z"></path></g><g data-mml-node="mo" data-latex="(" transform="translate(763,0)"><path data-c="28" d="M318-248C327-248 332-243 332-234C332-231 330-227 327-223C275-183 233-117 202-26C175 53 161 131 161 208L161 292C161 369 175 447 202 526C233 617 275 683 327 723C330 726 332 730 332 734C332 743 327 748 318 748C317 748 314 747 311 745C251 699 201 631 160 540C121 453 101 371 101 292L101 208C101 129 121 47 160-40C201-131 251-199 311-245C314-247 317-248 318-248Z"></path></g><g data-mml-node="mi" data-latex="n" transform="translate(1152,0)"><path data-c="1D45B" d="M537 137C514 58 481 18 440 18C427 18 420 28 420 47C420 61 426 84 438 115C478 224 498 296 498 333C498 403 451 442 381 442C322 442 271 416 230 363C222 407 187 442 136 442C80 442 58 390 44 345C34 313 29 294 29 287C29 278 34 273 45 273C50 273 53 274 56 276C61 285 64 292 65 299C83 375 106 413 133 413C151 413 160 399 160 371C160 358 155 331 144 290L87 63C84 50 78 24 78 19C78-1 89-11 111-11C130-11 144-1 151 19C153 24 159 49 170 92L191 181L221 295C232 318 249 341 270 365C299 397 335 413 378 413C411 413 427 391 427 348C427 310 406 234 363 120C356 102 353 87 353 74C353 25 390-11 438-11C482-11 517 14 542 64C561 104 571 131 571 144C571 153 566 158 555 158C552 158 537 149 537 137Z"></path></g><g data-mml-node="mo" data-latex=")" transform="translate(1752,0)"><path data-c="29" d="M78-245C138-199 188-131 229-40C268 47 288 129 288 208L288 292C288 371 268 453 229 540C188 631 138 699 78 745C75 747 72 748 71 748C62 748 57 743 57 734C57 730 59 726 62 723C114 683 156 617 187 526C214 447 228 369 228 292L228 208C228 131 214 53 187-26C156-117 114-183 62-223C59-227 57-231 57-234C57-243 62-248 71-248C72-248 75-247 78-245Z"></path></g></g></g></svg></mjx-container></p>
 
 		</div>
 
@@ -767,18 +806,18 @@ mjx-container[display="true"] + br {
 		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
 			<div class="article-copyright-info-container">
     <ul>
-        <li><strong>标题:</strong> hello world</li>
+        <li><strong>标题:</strong> 树的重心</li>
         <li><strong>作者:</strong> Norwallace</li>
         <li><strong>创建于
-                :</strong> 2026-07-30 12:44:19</li>
+                :</strong> 2026-08-06 12:24:05</li>
         
             <li>
                 <strong>更新于
-                    :</strong> 2026-08-03 11:51:43
+                    :</strong> 2026-08-06 16:39:02
             </li>
         
         <li>
-            <strong>链接:</strong> https://norwallace.github.io/2026/07/30/hello world/
+            <strong>链接:</strong> https://norwallace.github.io/2026/08/06/树的重心/
         </li>
         <li>
             <strong>
@@ -797,6 +836,14 @@ mjx-container[display="true"] + br {
 		
 
 		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/%E5%9B%BE%E8%AE%BA/">#图论</a>&nbsp;
+			</li>
+			
+		</ul>
+		
 
 		
 
@@ -804,17 +851,29 @@ mjx-container[display="true"] + br {
 		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
 			
 			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-				<a class="prev" rel="prev" href="/2026/08/03/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">
+				<a class="prev" rel="prev" href="/2026/08/06/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
 					<span class="left arrow-icon flex justify-center items-center">
 						<i class="fa-solid fa-chevron-left"></i>
 					</span>
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item truncate max-w-48">最短路径问题</span>
+						<span class="post-nav-title-item truncate max-w-48">最近公共祖先</span>
 						<span class="post-nav-item">上一篇</span>
 					</span>
 				</a>
 			</div>
 			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2026/08/05/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">树的直径</span>
+						<span class="post-nav-item">下一篇</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
 			
 		</div>
 		
@@ -828,8 +887,8 @@ mjx-container[display="true"] + br {
 		<div class="post-toc-wrap">
 	<div class="post-toc">
 		<div class="toc-title">目录</div>
-		<div class="page-title">hello world</div>
-		
+		<div class="page-title">树的重心</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%A6%82%E5%BF%B5"><span class="nav-text">一、概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%AE%9A%E4%B9%89"><span class="nav-text">1.定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%80%A7%E8%B4%A8"><span class="nav-text">2.性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%87%8D%E5%BF%83%E6%B1%82%E6%B3%95%E2%80%94%E2%80%94%E4%BD%BF%E7%94%A8DFS"><span class="nav-text">二、重心求法——使用DFS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF"><span class="nav-text">1.基本思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-text">2.代码实现</span></a></li></ol></li></ol>
 
 	</div>
 </div>
