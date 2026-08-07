@@ -94,7 +94,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://norwallace.github.io/images/redefine-og.webp">
 <meta property="article:published_time" content="2026-08-05T13:14:28.000Z">
-<meta property="article:modified_time" content="2026-08-06T08:32:19.972Z">
+<meta property="article:modified_time" content="2026-08-06T11:44:07.024Z">
 <meta property="article:author" content="Guo Yuxuan">
 <meta property="article:tag" content="图论">
 <meta name="twitter:card" content="summary">
@@ -673,7 +673,7 @@ mjx-container[display="true"] + br {
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
         <div class="label text-third-text-color text-sm">标签</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -681,7 +681,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">分类</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">10</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
         <div class="label text-third-text-color text-sm">文章</div>
     </a>
 </div>
@@ -718,7 +718,7 @@ mjx-container[display="true"] + br {
 				<div class="author flex items-center">
 					<span class="name text-default-text-color text-lg font-semibold">Norwallace</span>
 					
-					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv2</span>
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv3</span>
 					
 				</div>
 				<div class="meta-info">
@@ -732,8 +732,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2026-08-06 16:32:19</span>
-            <span class="mobile">2026-08-06 16:32:19</span>
+            <span class="desktop">2026-08-06 19:44:07</span>
+            <span class="mobile">2026-08-06 19:44:07</span>
             <span class="hover-info">更新</span>
         </span>
     
@@ -791,14 +791,20 @@ mjx-container[display="true"] + br {
 <h2 id="二、求直径的方法"><a href="#二、求直径的方法" class="headerlink" title="二、求直径的方法"></a>二、求直径的方法</h2><h3 id="1-两次DFS"><a href="#1-两次DFS" class="headerlink" title="1.两次DFS"></a>1.两次DFS</h3><h4 id="（1）正确性的证明"><a href="#（1）正确性的证明" class="headerlink" title="（1）正确性的证明"></a>（1）正确性的证明</h4><p>转化问题：证明对于任意的点p，距离p最远的点u一定是直径的一个端点。<br>设树中有四个点u、v、s、t，其中u、v为直径的两个端点，s、t为任意点。<br>假设s-&gt;t的距离大于s-&gt;u的距离，那么v-&gt;t的距离应该大于v-&gt;u的距离<br>两种情况的解释图如下：</p>
 <h4 id="（2）代码实现"><a href="#（2）代码实现" class="headerlink" title="（2）代码实现"></a>（2）代码实现</h4><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt; g[N];</span><br><span class="line"><span class="type">int</span> n,far,maxd;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> fa=<span class="number">-1</span>,<span class="type">int</span> d=<span class="number">0</span>)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="keyword">if</span>(d &gt; maxd)</span><br><span class="line">    {</span><br><span class="line">        maxd=d;</span><br><span class="line">        far=u;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;t : g[u])</span><br><span class="line">        <span class="keyword">if</span>(t.first != fa) <span class="comment">// </span></span><br><span class="line">            <span class="built_in">dfs</span>(t.first, u, d+t.second);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> <span class="comment">// 实际使用</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    maxd=<span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">dfs</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> u=far; <span class="comment">// far等于第一轮得到的直径一端</span></span><br><span class="line">    maxd=<span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">dfs</span>(u); <span class="comment">// far等于直径另一端，maxd等于直径长度</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
 <p>这个算法的要求是边权非负。</p>
-<h3 id="2-在路径最浅点处进行统计"><a href="#2-在路径最浅点处进行统计" class="headerlink" title="2.在路径最浅点处进行统计"></a>2.在路径最浅点处进行统计</h3><h4 id="（1）基本思路"><a href="#（1）基本思路" class="headerlink" title="（1）基本思路"></a>（1）基本思路</h4><h4 id="（2）代码实现-1"><a href="#（2）代码实现-1" class="headerlink" title="（2）代码实现"></a>（2）代码实现</h4><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt; g[N];</span><br><span class="line"><span class="type">int</span> diam=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> fa=<span class="number">-1</span>)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> max1=<span class="number">0</span>, max2=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;t : g[u])</span><br><span class="line">    {</span><br><span class="line">        <span class="type">int</span> len=<span class="built_in">dfs</span>(t.first, u)+w;</span><br><span class="line">        <span class="keyword">if</span>(len &gt; max1)</span><br><span class="line">            max2=max1;</span><br><span class="line">            max1=len;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(len &gt; max2)</span><br><span class="line">            max2=len;</span><br><span class="line">    }</span><br><span class="line">    diam=<span class="built_in">max</span>(diam, max1+max2);</span><br><span class="line">    <span class="keyword">return</span> max1;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
+<h3 id="2-树上DP"><a href="#2-树上DP" class="headerlink" title="2.树上DP"></a>2.树上DP</h3><h4 id="（1）基本思路"><a href="#（1）基本思路" class="headerlink" title="（1）基本思路"></a>（1）基本思路</h4><p>我们在树上对每一个节点u，进行如下操作：</p>
+<ol>
+<li>首先遍历这个u的子树，求到这些子树内最远点的距离并找出最大值max1和次大值max2</li>
+<li>我们用max1+max2来更新d（即我们把最长的一条和第二长的一条拼在一起一定能得到最长的一条，那么这个就作为当前的直径）</li>
+<li>我们再返回max1,用于u父亲节点到u子树内最远点的距离（即为下一轮遍历u父亲节点的子树节省时间）</li>
+</ol>
+<h4 id="（2）代码实现-1"><a href="#（2）代码实现-1" class="headerlink" title="（2）代码实现"></a>（2）代码实现</h4><div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">vector&lt;pair&lt;<span class="type">int</span>,<span class="type">int</span>&gt;&gt; g[N];</span><br><span class="line"><span class="type">int</span> diam=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u,<span class="type">int</span> fa=<span class="number">-1</span>)</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">    <span class="type">int</span> max1=<span class="number">0</span>, max2=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;t : g[u])</span><br><span class="line">    {</span><br><span class="line">        <span class="type">int</span> len=<span class="built_in">dfs</span>(t.first, u)+t.second;</span><br><span class="line">        <span class="keyword">if</span>(len &gt; max1)</span><br><span class="line">            max2=max1;</span><br><span class="line">            max1=len;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(len &gt; max2)</span><br><span class="line">            max2=len;</span><br><span class="line">    }</span><br><span class="line">    diam=<span class="built_in">max</span>(diam, max1+max2);</span><br><span class="line">    <span class="keyword">return</span> max1;</span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
 <p>这个算法适用于任何边权，包括负权。</p>
 <h3 id="3-两种方法的对比"><a href="#3-两种方法的对比" class="headerlink" title="3.两种方法的对比"></a>3.两种方法的对比</h3><table>
 <thead>
 <tr>
 <th></th>
 <th>两次DFS</th>
-<th>在路径最浅点处进行统计</th>
+<th>树上DP</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -836,7 +842,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>更新于
-                    :</strong> 2026-08-06 16:32:19
+                    :</strong> 2026-08-06 19:44:07
             </li>
         
         <li>
@@ -911,7 +917,7 @@ mjx-container[display="true"] + br {
 	<div class="post-toc">
 		<div class="toc-title">目录</div>
 		<div class="page-title">树的直径</div>
-		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AE%9A%E4%B9%89"><span class="nav-text">一、定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%B1%82%E7%9B%B4%E5%BE%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">二、求直径的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%A4%E6%AC%A1DFS"><span class="nav-text">1.两次DFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%9C%A8%E8%B7%AF%E5%BE%84%E6%9C%80%E6%B5%85%E7%82%B9%E5%A4%84%E8%BF%9B%E8%A1%8C%E7%BB%9F%E8%AE%A1"><span class="nav-text">2.在路径最浅点处进行统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="nav-text">3.两种方法的对比</span></a></li></ol></li></ol>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%AE%9A%E4%B9%89"><span class="nav-text">一、定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E6%B1%82%E7%9B%B4%E5%BE%84%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-text">二、求直径的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E4%B8%A4%E6%AC%A1DFS"><span class="nav-text">1.两次DFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E6%A0%91%E4%B8%8ADP"><span class="nav-text">2.树上DP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="nav-text">3.两种方法的对比</span></a></li></ol></li></ol>
 
 	</div>
 </div>
@@ -939,7 +945,7 @@ mjx-container[display="true"] + br {
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        共撰写了 10 篇文章
+                        共撰写了 16 篇文章
                     </span>
                     
                 </p>

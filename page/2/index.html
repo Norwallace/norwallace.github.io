@@ -78,7 +78,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="https://norwallace.github.io/archives/2026/"/>
+    <link rel="canonical" href="https://norwallace.github.io/page/2/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -88,7 +88,7 @@
         <meta name="description" content="Norwallace&#39;s blog, a simple blog.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Norwallace&#39;s blog">
-<meta property="og:url" content="https://norwallace.github.io/archives/2026/index.html">
+<meta property="og:url" content="https://norwallace.github.io/page/2/index.html">
 <meta property="og:site_name" content="Norwallace&#39;s blog">
 <meta property="og:description" content="Norwallace&#39;s blog, a simple blog.">
 <meta property="og:locale" content="zh_CN">
@@ -107,7 +107,7 @@
     
     <title>
         
-            归档: 2026 | Norwallace&#39;s blog
+            Norwallace&#39;s blog - a simple blog
         
     </title>
 
@@ -297,6 +297,41 @@ mjx-container[display="true"] + br {
 <main class="page-container" id="swup">
 
 	
+	<style>
+    .home-article-item,
+    .sidebar-links,
+    .sidebar-content,
+    a.page-number,
+    a.extend,
+    .sidebar-links .links:hover,
+    .right-bottom-tools,
+    footer.footer {
+        background-color: var(--background-color-transparent-80) !important;
+    }
+    .right-bottom-tools:hover,
+    a.page-number:hover,
+    a.extend:hover {
+        background-color: var(--primary-color) !important;
+    }
+    .site-info,
+    .home-article-sticky-label {
+        background-color: var(--background-color-transparent-15) !important;
+    }
+    .home-article-sticky-label {
+        backdrop-filter: none !important;
+    }
+    .home-banner-background {
+        filter: blur(15px);
+    }
+</style>
+
+<div class="home-banner-background transition-fade fixed top-0 left-0 w-screen h-screen scale-125 sm:scale-110 box-border will-change-transform bg-cover">
+    <img src="/images/bgpl.jpg" alt="home-banner-background" class="w-full h-full object-cover dark:hidden">
+    <img src="/images/bgpd.jpg" alt="home-banner-background" class="w-full h-full object-cover hidden dark:block">
+</div>
+
+
+	
 
 	<div class="main-content-container flex flex-col justify-between min-h-dvh">
 		<div class="main-content-header">
@@ -305,9 +340,9 @@ mjx-container[display="true"] + br {
         <div class="left">
             
             <a class="logo-title" href="/">
-                
+                <h1>
                 Norwallace&#39;s blog
-                
+                </h1>
             </a>
         </div>
 
@@ -321,7 +356,7 @@ mjx-container[display="true"] + br {
 
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class=""
+                                <a class="active"
                                    href="/"
                                         >
                                     <i class="fa-regular fa-house fa-fw"></i>
@@ -461,7 +496,7 @@ mjx-container[display="true"] + br {
 
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="active"
+                                <a class=""
                                    href="/archive"
                                         >
                                     <i class="fa-regular fa-archive fa-fw"></i>
@@ -495,7 +530,7 @@ mjx-container[display="true"] + br {
 
                     <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
                         
-                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
                            href="/"
                         >
                             <span>
@@ -648,7 +683,7 @@ mjx-container[display="true"] + br {
 
                     <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
                         
-                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
                            href="/archive"
                         >
                             <span>
@@ -693,166 +728,438 @@ mjx-container[display="true"] + br {
 
 		<div class="main-content-body transition-fade-up">
 			
+			<div class="home-sidebar-container">
+    <div class="sticky-container sticky">
+        
+        
+            
+            <div class="sidebar-content" >
+                <div class="avatar flex justify-center">
+    <img src="/images/Norwallace-avatar.jpg">
+</div>
+                <div class="author flex flex-col justify-center my-2.5 mx-0">
+    <div class="name">Norwallace</div>
+    
+        <div class="label">Lv3</div>
+    
+</div>
+                <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="label text-third-text-color text-sm">标签</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">1</div>
+        <div class="label text-third-text-color text-sm">分类</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">16</div>
+        <div class="label text-third-text-color text-sm">文章</div>
+    </a>
+</div>
+            </div>
+        
+
+    </div>
+</div>
+
+			
 
 			<div class="main-content">
-				<div class="archive-container shadow-none hover:shadow-none sm:shadow-redefine sm:hover:shadow-redefine-hover">
-	
-<div class="archive-list-container">
-    
-        <section class="archive-item mb-spacing-unit last:mb-0">
-            <div class="archive-item-header flex flex-row items-center mb-2">
-                <span class="archive-year font-semibold text-3xl mr-2">2026</span>
-                <span class="archive-year-post-count text-xs md:text-sm font-bold rounded-small bg-third-background-color py-[2px] px-[10px] border border-border-color">16</span>
-            </div>
-            
-            <ul class="article-list pl-0 md:pl-8 text-lg leading-[1.5]">
+				<div class="home-content-container">
+    <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
                 
-                    
-                    
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-07'>
-                    
-                    <a href="/2026/08/07/%E5%BF%AB%E9%80%9F%E5%B9%82%E5%92%8C%E6%A8%A1%E8%BF%90%E7%AE%97/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">快速幂和模运算</span>
-                    </a>
-                    
+
                 
-                    
-                    
-                    <a href="/2026/08/07/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">树状数组</span>
-                    </a>
-                    
+
                 
-                    
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2026/08/04/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+                            并查集
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>讲解并查集相关内容</p>
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Aug 04 2026 22:08:07 GMT+0800">
+                
+                    2026-08-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
                     
                         
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-06'>
+                        <li>
+                            <a href="/categories/notes/">notes</a>&nbsp;
+                        </li>
                     
-                    <a href="/2026/08/06/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">栈和队列</span>
-                    </a>
                     
                 
-                    
-                    
-                    <a href="/2026/08/06/%E6%A0%91%E5%89%96/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">树剖</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2026/08/06/tarjian%E7%AE%97%E6%B3%95/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">tarjian算法</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2026/08/06/%E6%AC%A7%E6%8B%89%E5%9B%BE/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">欧拉图</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2026/08/06/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">最近公共祖先（LCA）</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2026/08/06/%E6%A0%91%E7%9A%84%E9%87%8D%E5%BF%83/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">树的重心</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-05'>
-                    
-                    <a href="/2026/08/05/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">树的直径</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2026/08/05/Blog%E9%98%85%E8%AF%BB%E6%8C%87%E5%8D%97/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">Blog阅读指南🧭</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-04'>
-                    
-                    <a href="/2026/08/04/%E5%B9%B6%E6%9F%A5%E9%9B%86/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">并查集</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2026/08/04/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">最小生成树</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2026/08/04/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">拓扑排序</span>
-                    </a>
-                    
-                
-                    
-                    
-                    <a href="/2026/08/04/%E5%9B%BE%E7%9A%84%E5%82%A8%E5%AD%98%E6%96%B9%E6%B3%95/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">图的储存方法</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='08-03'>
-                    
-                    <a href="/2026/08/03/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">最短路径问题</span>
-                    </a>
-                    
-                
-                    
-                    
-                        
-                            </li>
-                         <!-- Close the previous LI if not the first item -->
-                        <li class="article-item space-y-2 px-6 pt-10 pb-2 text-xl relative border-l-2 border-border-color" date-is='07-30'>
-                    
-                    <a href="/2026/07/30/hello%20world/" class="block w-fit">
-                        <span class="article-title my-0.5 text-2xl">hello world</span>
-                    </a>
-                    
-                
-                </li> <!-- Ensure the last item is properly closed -->
             </ul>
-        </section>
-    
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2026/08/04/%E5%B9%B6%E6%9F%A5%E9%9B%86/">阅读全文<span class="seo-reader-text">并查集</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2026/08/04/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">
+                            最小生成树
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>“咱们能不能走最少的路去最多的地方？”</p>
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Aug 04 2026 21:38:42 GMT+0800">
+                
+                    2026-08-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/notes/">notes</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2026/08/04/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/">阅读全文<span class="seo-reader-text">最小生成树</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2026/08/04/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">
+                            拓扑排序
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>学习图论最先接触的算法，你和图论亲密生活的开始（bushi）</p>
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Aug 04 2026 18:05:56 GMT+0800">
+                
+                    2026-08-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/notes/">notes</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2026/08/04/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">阅读全文<span class="seo-reader-text">拓扑排序</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2026/08/04/%E5%9B%BE%E7%9A%84%E5%82%A8%E5%AD%98%E6%96%B9%E6%B3%95/">
+                            图的储存方法
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>想和图论玩耍，你得先学会记住她的样子</p>
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Aug 04 2026 13:33:45 GMT+0800">
+                
+                    2026-08-04
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/notes/">notes</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2026/08/04/%E5%9B%BE%E7%9A%84%E5%82%A8%E5%AD%98%E6%96%B9%E6%B3%95/">阅读全文<span class="seo-reader-text">图的储存方法</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2026/08/03/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">
+                            最短路径问题
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>讲解常用的最短路径算法</p>
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Mon Aug 03 2026 23:30:50 GMT+0800">
+                
+                    2026-08-03
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/notes/">notes</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2026/08/03/%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84%E9%97%AE%E9%A2%98/">阅读全文<span class="seo-reader-text">最短路径问题</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+            <li class="home-article-item">
+
+                
+
+                
+
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/2026/07/30/hello%20world/">
+                            hello world
+                        </a>
+                    </h3>
+
+                    <div class="home-article-content markdown-body">
+                        
+                            
+                            纪念网页搭建成功
+
+                        
+                    </div>
+
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Thu Jul 30 2026 12:44:19 GMT+0800">
+                
+                    2026-07-30
+                
+            </span>
+        </span>
+        
+        
+    </div>
+
+    <a href="/2026/07/30/hello%20world/">阅读全文<span class="seo-reader-text">hello world</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+                </div>
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator px-7 py-5">
+        <div class="paginator">
+	<a class="extend prev" rel="prev" href="/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+</div>
+  
+    </div>
+</div>
+
 			</div>
 
 			
@@ -1054,6 +1361,7 @@ mjx-container[display="true"] + br {
         }),
     );
 </script>
+
 
 
 
